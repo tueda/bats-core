@@ -145,6 +145,20 @@ finish() {
   printf "\n"
 }
 
+if [[ -n "${CI:-}" ]]; then
+  begin() {
+    :
+  }
+
+  go_to_column() {
+    :
+  }
+
+  clear_to_end_of_line() {
+    :
+  }
+fi
+
 trap finish EXIT
 
 while IFS= read -r line; do
